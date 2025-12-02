@@ -11,6 +11,7 @@ import {
   X,
   ArrowRight,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import "./index.css";
 
 // --- Types & Translations ---
@@ -187,12 +188,12 @@ function App() {
   const [lang, setLang] = useState<Language>("no");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const t = content[lang];
+  const navigate = useNavigate();
 
   const toggleLang = () => setLang((prev) => (prev === "no" ? "en" : "no"));
 
   return (
     <div className="min-h-screen font-sans text-brand-text selection:bg-brand-primary/30">
-      {/* Navigation */}
       <nav className="fixed w-full z-50 bg-brand-bg/90 backdrop-blur-md border-b border-brand-accent3/50 shadow-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
@@ -240,7 +241,9 @@ function App() {
               </Button> */}
               <Button
                 variant="secondary"
-                onClick={() => {}}
+                onClick={() => {
+                  navigate("./profile");
+                }}
                 className="text-sm px-5 py-2"
               >
                 <User size={16} />
@@ -339,15 +342,6 @@ function App() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Feature 1 */}
-            <Card className="hover:-translate-y-2">
-              <div className="w-14 h-14 bg-brand-accent2/30 rounded-2xl flex items-center justify-center mb-6 text-brand-secondary">
-                <GraduationCap size={32} />
-              </div>
-              <h3 className="text-xl font-bold mb-3">{t.features.f1_title}</h3>
-              <p className="text-gray-600 leading-relaxed">
-                {t.features.f1_desc}
-              </p>
-            </Card>
 
             {/* Feature 2 */}
             <Card className="hover:-translate-y-2">
@@ -368,6 +362,16 @@ function App() {
               <h3 className="text-xl font-bold mb-3">{t.features.f2_title}</h3>
               <p className="text-gray-600 leading-relaxed">
                 {t.features.f2_desc}
+              </p>
+            </Card>
+
+            <Card className="hover:-translate-y-2">
+              <div className="w-14 h-14 bg-brand-accent2/30 rounded-2xl flex items-center justify-center mb-6 text-brand-secondary">
+                <GraduationCap size={32} />
+              </div>
+              <h3 className="text-xl font-bold mb-3">{t.features.f1_title}</h3>
+              <p className="text-gray-600 leading-relaxed">
+                {t.features.f1_desc}
               </p>
             </Card>
           </div>
