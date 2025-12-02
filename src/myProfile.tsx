@@ -126,6 +126,10 @@ const content = {
     certs: {
       download: "Last ned diplom",
       completed: "Fullført",
+      completed_courses: "Fullførte kurs:",
+      welcome: "Velkommen tilbake, ",
+      streak: "Dager i strekk",
+      module: "Modul ",
     },
   },
   en: {
@@ -171,6 +175,10 @@ const content = {
     certs: {
       download: "Download Diploma",
       completed: "Completed",
+      completed_courses: "Completed courses:",
+      welcome: "Welcome back, ",
+      streak: "Days in a row",
+      module: "Module ",
     },
   },
 };
@@ -272,7 +280,7 @@ export default function MyProfile({ onLogout }: { onLogout: () => void }) {
               {t.headers.profile}
             </h1>
             <p className="text-brand-secondary text-lg">
-              Velkommen tilbake, {user.fullName.split(" ")[0]}
+              {t.certs.welcome} {user.fullName.split(" ")[0]}
             </p>
           </div>
 
@@ -280,12 +288,12 @@ export default function MyProfile({ onLogout }: { onLogout: () => void }) {
           <div className="flex gap-4">
             <div className="bg-brand-accent1/20 text-brand-accent1 p-3 rounded-2xl flex flex-col items-center justify-center w-24 h-24 border border-brand-accent1/30">
               <Award size={24} />
-              <span className="text-xs font-bold mt-1">Modul 1</span>
+              <span className="text-xs font-bold mt-1">{t.certs.module} 1</span>
             </div>
             <div className="bg-brand-primary/20 text-brand-primary p-3 rounded-2xl flex flex-col items-center justify-center w-24 h-24 border border-brand-primary/30">
               <div className="text-xl font-bold">12</div>
               <span className="text-xs text-center leading-tight">
-                Dager i strekk
+                {t.certs.streak}
               </span>
             </div>
           </div>
@@ -603,7 +611,9 @@ export default function MyProfile({ onLogout }: { onLogout: () => void }) {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg">{t.headers.certs}</h3>
-                  <p className="text-sm text-gray-500">Fullførte kurs: 1</p>
+                  <p className="text-sm text-gray-500">
+                    {t.certs.completed_courses} 1
+                  </p>
                 </div>
               </div>
               <button className="px-6 py-3 border-2 border-brand-accent2 rounded-xl font-bold text-gray-600 hover:bg-brand-bg hover:border-brand-primary transition-all flex items-center gap-2">
