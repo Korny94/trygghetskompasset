@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #fdf9f5;
+  --color-brand-text: #4a4a48;
+  --color-brand-primary: #fdb59d;
+  --color-brand-secondary: #7fa99e;
+  --color-brand-accent1: #b8a9c1;
+  --color-brand-accent2: #b8ccc6;
+  --color-brand-accent3: #e8d5c4;
+
+  --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+  --shadow-inner-light: inset 0 2px 4px 0 rgba(255, 255, 255, 0.3);
+
+  --font-family-sans: "Source Sans Pro", sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  background-color: #fdf9f5;
+  color: #4a4a48;
+}
